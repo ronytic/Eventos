@@ -1,5 +1,8 @@
 <?php
 $folder="";
+include_once("class/testimonio.php");
+$testimonio=new testimonio;
+$tes=$testimonio->mostrarTodoRegistro("",1,"");
 ?>
 <?php include_once("cabecerahtml.php");?>
 <?php include_once("cabecera.php");?>
@@ -73,30 +76,14 @@ $folder="";
                      <span id="bx-next5"></span>
                  </div>
                  <ul class="bxslider" id="home-block">
+                    <?php foreach($tes as $t){?>
                     <li>
                         <blockquote class="blockquote-color">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante ultricies nisi vel augue quam semper libero.</p>
-                            <footer>Brian Krzanich, Intel CEO</footer>
+                            <p><?php echo $t['testimonio'];?></p>
+                            <footer><strong><?php echo $t['titulo'];?></strong>, <?php echo $t['nombre'];?></footer>
                         </blockquote>
                     </li>
-                    <li>
-                        <blockquote class="blockquote-color">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante ultricies nisi vel augue quam semper libero.</p>
-                            <footer>Brian Krzanich, Intel CEO</footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote class="blockquote-color">
-                            <p>Dolore totam at ea reiciendis suscipit a tempore cum nisi aspernatur nisi alias posuere erat a ante posuere erat a ante ultricies ultricies nisi vel augue quam semper conse erat quuntur.</p>
-                            <footer>Sheldon Cooper, Physical Quantum</footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote class="blockquote-color">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante ultricies nisi vel augue quam semper libero.</p>
-                            <footer>Brian Krzanich, Intel CEO</footer>
-                        </blockquote>
-                    </li>
+                    <?php }?>
                 </ul>
             </div>
             <div class="col-md-6">
