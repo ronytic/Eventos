@@ -23,7 +23,7 @@
                 <li><a href="#" class="animated fadeIn animation-delay-8 facebook"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#" class="animated fadeIn animation-delay-7 twitter"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#" class="animated fadeIn animation-delay-9 instagram"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#" class="animated fadeIn animation-delay-8 vine"><i class="fa fa-vine"></i></a></li>
+
             </ul>
 
             <div class="dropdown animated fadeInDown animation-delay-11">
@@ -57,16 +57,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="<?php $folder?>">Inicio</a></li>
-                <li><a href="<?php $folder?>/quienes-somos.php">Quienes Somos</a></li>
-                <li><a href="<?php $folder?>/productos-servicios.php">Productos y Servicios</a></li>
-                <li><a href="<?php $folder?>/nuestros-clientes.php">Nuestros Clientes</a></li>
-                <li><a href="<?php $folder?>/reservas.php">Reservas</a></li>
+                <li><a href="<?php $folder?>quienes-somos.php">Quienes Somos</a></li>
+                <li><a href="<?php $folder?>productos-servicios.php">Productos y Servicios</a></li>
+                <li><a href="<?php $folder?>nuestros-clientes.php">Nuestros Clientes</a></li>
+                <li><a href="<?php $folder?>reservas.php">Reservas</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Usuarios</a>
                      <ul class="dropdown-menu dropdown-menu-left">
-                        <li><a href="blog2.html">Other Option</a></li>
+                        <li><a href="index.php">Nuevo Usuario</a></li>
                         <li class="divider"></li>
-                        <li><a href="single.html">Blog Item</a></li>
+                        <li><a href="listar.php">Listar Usuarios</a></li>
                     </ul>
                 </li>
              </ul>
