@@ -1,4 +1,4 @@
-
+</div>
 <aside id="footer-widgets">
     <div class="container">
         <div class="row">
