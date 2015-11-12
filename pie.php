@@ -26,7 +26,7 @@
 </div>
 
 
-<script src="<?php echo $folder?>js/core/vendors.js"></script>
+
 
 <script src="<?php echo $folder?>js/core/styleswitcher.js"></script>
 
