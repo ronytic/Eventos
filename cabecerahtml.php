@@ -27,3 +27,4 @@
         <script src="<?php echo $folder?>js/core/html5shiv.min.js"></script>
         <script src="<?php echo $folder?>js/core/respond.min.js"></script>
     <![endif]-->
+    <script src="<?php echo $folder?>js/core/vendors.js"></script>
