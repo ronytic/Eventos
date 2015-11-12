@@ -19,7 +19,7 @@ $ser=$servicio->mostrarTodoRegistro("",1,"");
             <article class="post animated fadeInLeft animation-delay-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h3 class="post-title"><a href="single.html" class="transicion"><?php echo $s['titulo']?></a></h3>
+                        <h3 class="post-title"><a href="#" class="transicion"><?php echo $s['titulo']?></a></h3>
                         <div class="row">
                             <div class="col-lg-6">
                                 <img src="<?php echo $folder?>imagenes/productosyservicios/<?php echo $s['imagen']?>" class="img-post img-responsive" alt="Image">
