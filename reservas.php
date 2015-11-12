@@ -1,0 +1,108 @@
+<?php
+$folder="";
+include_once("class/testimonio.php");
+$testimonio=new testimonio;
+$tes=$testimonio->mostrarTodoRegistro("",1,"");
+include_once("class/servicio.php");
+$servicio=new servicio;
+$ser=$servicio->mostrarTodoRegistro("",1,"titulo");
+?>
+<?php include_once("cabecerahtml.php");?>
+<script language="javascript" type="text/javascript">
+$(document).on("ready",function(){
+    $(document).on("change","[name=servicio]",function(e){
+        var servicio=$("[name=servicio]>option:selected").attr("rel-imagen");
+        var precio=$("[name=servicio]>option:selected").attr("rel-precio");
+        var titulo=$("[name=servicio]>option:selected").attr("rel-titulo");
+        var descripcion=$("[name=servicio]>option:selected").attr("rel-descripcion");
+    });
+});
+</script>
+<?php include_once("cabecera.php");?>
+<section class="">
+    <div class="container">
+        
+        <div class="row">
+        <div class="col-md-8">
+        <h2 class="section-title">Reservas </h2>
+            <article class="post animated fadeInLeft animation-delay-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="post-title"><a href="" class="transicion"><?php echo $s['titulo']?></a></h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="<?php echo $folder?>imagenes/productosyservicios/<?php echo $s['imagen']?>" class="img-post img-responsive" alt="Image">
+                            </div>
+                            <div class="col-lg-6 post-content">
+                                <p><?php echo $s['descripcion']?></p>
+
+                                <h2>Precio: <span class="label label-info">Bs  <?php echo $s['precio']?></span></h2><h3></h3>
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer post-info-b">
+                        <div class="row">
+
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-lg-offset-8 col-md-offset-7 col-sm-offset-6">
+                                <a href="reservas.php?c=<?php echo $s['codservicio']?>" class="pull-right btn btn-lg btn-success">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article> <!-- post -->
+            
+            <article class="post animated fadeInLeft animation-delay-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="post-title">Datos de Reserva</h3>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <td>Servicio</td>
+                                        <td>
+                                            <select class="form-control" name="servicio">
+                                            <?php foreach($ser as $s){?>
+                                            <option value="<?php echo $s['codservicio']?>" <?php echo $s['codservicio']==$_GET['c']?'selected="selected"':'';?> rel-imagen="<?php echo $s['imagen']?>" rel-precio="<?php echo $s['precio']?>" rel-titulo="<?php echo $s['titulo']?>" rel-descripcion="<?php echo $s['descripcion']?>"><?php echo $s['titulo']?></option>
+                                            <?php }?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article> <!-- post -->
+
+        </div> <!-- col-md-8 -->
+        <div class="col-md-4">
+            <aside class="sidebar">
+                <div class="panel panel-primary animated fadeInDown animation-delay-6">
+                    <div class="panel-heading"><i class="fa fa-comments"></i> Testimonios de Clientes</div>
+                    <div class="panel-body">
+                        <ul class="comments-sidebar">
+                            <?php foreach($tes as $t){?>
+                            <li>
+                                <h4><a href="<?php echo $t['facebook']?>" target="_blank"><?php echo $t['nombre']?></a> - <a href="#"><?php echo $t['titulo'];?></a></h4>
+                                <p><?php echo $t['testimonio'];?></p>
+                            </li>
+                           
+                            <?php }?>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+           </aside> <!-- Sidebar -->
+        </div>
+    </div> <!-- row -->
+        
+        
+    </div><!--Container-->
+</section><!--Section-->
+
+
+<?php include_once("pie.php");?>
