@@ -10,13 +10,20 @@ $ser=$servicio->mostrarTodoRegistro("",1,"titulo");
 <?php include_once("cabecerahtml.php");?>
 <script language="javascript" type="text/javascript">
 $(document).on("ready",function(){
-    $(document).on("change","[name=servicio]",function(e){
-        var servicio=$("[name=servicio]>option:selected").attr("rel-imagen");
+    $(document).on("change","[name=servicio]",cargar);
+    cargar();
+});
+function cargar(){
+        var imagen=$("[name=servicio]>option:selected").attr("rel-imagen");
         var precio=$("[name=servicio]>option:selected").attr("rel-precio");
         var titulo=$("[name=servicio]>option:selected").attr("rel-titulo");
         var descripcion=$("[name=servicio]>option:selected").attr("rel-descripcion");
-    });
-});
+        $("#titulo").html(titulo);
+        $("#precio").html("Bs "+precio);
+        $("#descripcion").html(descripcion);
+        $("#imagen").attr("src","<?php echo $folder?>imagenes/productosyservicios/"+imagen);
+       
+    }
 </script>
 <?php include_once("cabecera.php");?>
 <section class="">
@@ -28,25 +35,17 @@ $(document).on("ready",function(){
             <article class="post animated fadeInLeft animation-delay-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h3 class="post-title"><a href="" class="transicion"><?php echo $s['titulo']?></a></h3>
+                        <h3 class="post-title"><a href="" class="transicion"><span id="titulo"></span></a></h3>
                         <div class="row">
                             <div class="col-lg-6">
-                                <img src="<?php echo $folder?>imagenes/productosyservicios/<?php echo $s['imagen']?>" class="img-post img-responsive" alt="Image">
+                                <img src="" class="img-post img-responsive" alt="Image" id="imagen">
                             </div>
                             <div class="col-lg-6 post-content">
-                                <p><?php echo $s['descripcion']?></p>
+                                <p id="descripcion"></p>
 
-                                <h2>Precio: <span class="label label-info">Bs  <?php echo $s['precio']?></span></h2><h3></h3>
+                                <h2>Precio: <span class="label label-info " id="precio">Bs </span></h2><h3></h3>
                                 
                             
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer post-info-b">
-                        <div class="row">
-
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-lg-offset-8 col-md-offset-7 col-sm-offset-6">
-                                <a href="reservas.php?c=<?php echo $s['codservicio']?>" class="pull-right btn btn-lg btn-success">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +58,8 @@ $(document).on("ready",function(){
                         <h3 class="post-title">Datos de Reserva</h3>
                         <div class="row">
                             <div class="col-lg-12">
-                                <table class="table table-striped table-bordered">
+                                <form action="reserva/guardar.php" method="post">
+                                <table class="table table-hover table-bordered">
                                     <tr>
                                         <td>Servicio</td>
                                         <td>
@@ -70,7 +70,44 @@ $(document).on("ready",function(){
                                             </select>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>Fecha del Evento</td>
+                                        <td><input type="date" value="<?php echo date("Y-m-d");?>" name="fechaevento" class="form-control" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hora del Evento</td>
+                                        <td><input type="time" value="00:00:00" name="horaevento" class="form-control" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dirección del Evento</td>
+                                        <td><input type="text" value="" name="direccionevento" class="form-control" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nro de Invitados</td>
+                                        <td><input type="number" value="" name="nroinvitados" class="form-control" required min="0"></td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>Nombre del Cliente</td>
+                                        <td><input type="text" value="" name="nombrecliente" class="form-control" required ></td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>C.I. del Cliente</td>
+                                        <td><input type="text" value="" name="cicliente" class="form-control" required ></td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>Teléfono del Cliente</td>
+                                        <td><input type="text" value="" name="telefonocliente" class="form-control" required ></td>
+                                    </tr>
                                 </table>
+                                <h3>Pagos</h3>
+                                <table class="table table-bordered">
+                                    <tr class="info">
+                                        <td>A traves de Tigo</td>
+                                        <td><a href="http://tigo.com.bo?d" class="btn btn-lg btn-info" target="_blank"><img src="imagenes/logos/tigo.png"></a></td>
+                                    </tr>
+                                </table>
+                                <input type="submit" value="Reservar" class="btn btn-lg btn-success">
+                                </form>
                             </div>
                         </div>
                     </div>
