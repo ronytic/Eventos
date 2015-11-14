@@ -14,7 +14,7 @@ $ser=$servicio->mostrarTodoRegistro("",1,"");
         
         <div class="row">
         <div class="col-md-8">
-        <h2 class="section-title">Productos y Servicios <a href="reserva-personalizada.php" class="btn btn-lg btn-warning pull-right">Reserva Personalizada</a></h2>
+        <h2 class="section-title">Productos y Servicios <a href="pedido.php" class="btn btn-lg btn-warning pull-right">Pedido Personalizado</a></h2>
             <?php foreach($ser as $s){?>
             <article class="post animated fadeInLeft animation-delay-8">
                 <div class="panel panel-default">
