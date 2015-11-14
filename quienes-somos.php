@@ -8,7 +8,6 @@ $tes=$testimonio->mostrarTodoRegistro("",1,"");
 <?php include_once("cabecera.php");?>
 <section class="">
     <div class="container">
-        <div class="row">
          <div class="row">
                 <h2 class="section-title">Quienes Somos </h2>
                 <div class="col-sm-6">
@@ -23,7 +22,6 @@ $tes=$testimonio->mostrarTodoRegistro("",1,"");
                     <p>Si necesita detener la lectura antes de llegar al final, Word le recordará dónde dejó la lectura, incluso en otros dispositivos.El vídeo proporciona una manera eficaz para ayudarle a demostrar el punto.</p>
                 </div>
 
-            </div>
         </div>
     </div>
 </section>
