@@ -20,6 +20,7 @@ function cargar(){
         var descripcion=$("[name=servicio]>option:selected").attr("rel-descripcion");
         $("#titulo").html(titulo);
         $("#precio").html("Bs "+precio);
+        $("#total").val(precio);
         $("#descripcion").html(descripcion);
         $("#imagen").attr("src","<?php echo $folder?>imagenes/productosyservicios/"+imagen);
        
@@ -59,6 +60,7 @@ function cargar(){
                         <div class="row">
                             <div class="col-lg-12">
                                 <form action="reserva/guardar.php" method="post">
+                                <input type="hidden" name="total" value="" id="total">
                                 <table class="table table-hover table-bordered">
                                     <tr>
                                         <td>Servicio</td>
