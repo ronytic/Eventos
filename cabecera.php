@@ -56,11 +56,11 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="<?php $folder?>">Inicio</a></li>
-                <li><a href="<?php $folder?>quienes-somos.php">Quienes Somos</a></li>
-                <li><a href="<?php $folder?>productos-servicios.php">Productos y Servicios</a></li>
-                <li><a href="<?php $folder?>nuestros-clientes.php">Nuestros Clientes</a></li>
-                <li><a href="<?php $folder?>reservas.php">Reservas</a></li>
+                <li><a href="<?php echo $folder?>">Inicio</a></li>
+                <li><a href="<?php echo $folder?>quienes-somos.php">Quienes Somos</a></li>
+                <li><a href="<?php echo $folder?>productos-servicios.php">Productos y Servicios</a></li>
+                <li><a href="<?php echo $folder?>nuestros-clientes.php">Nuestros Clientes</a></li>
+                <li><a href="<?php echo $folder?>reservas.php">Reservas</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Usuarios</a>
                      <ul class="dropdown-menu dropdown-menu-left">
