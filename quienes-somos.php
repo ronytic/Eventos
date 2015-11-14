@@ -27,6 +27,4 @@ $tes=$testimonio->mostrarTodoRegistro("",1,"");
         </div>
     </div>
 </section>
-
-
 <?php include_once("pie.php");?>
