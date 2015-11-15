@@ -28,3 +28,7 @@
         <script src="<?php echo $folder?>js/core/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo $folder?>js/core/vendors.js"></script>
+    <style type="text/css">
+    .der{text-align:right;}
+    .resaltar{font-weight:bold}
+    </style>
