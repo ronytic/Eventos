@@ -6278,10 +6278,10 @@ a.feature-icon:hover {
 /* Date Input */
 /*-------------------------------------------------------------------*/
 input[type="date"] {
-  padding: 0;
+  /*padding: 0;
   padding-top: -5px;
   -webkit-padding-start: 1px;
-  height: 30px;
+  height: 30px;*/
   border: solid 1px #ccc;
 }
 input[type="date"]:focus {
