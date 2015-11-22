@@ -79,14 +79,29 @@
                 <li><a href="<?php echo $folder?>nuestros-clientes.php">Nuestros Clientes</a></li>
                 <li><a href="<?php echo $folder?>productos-servicios.php">Productos y Servicios</a></li>
                 <li><a href="<?php echo $folder?>reservas.php">Reservas</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Usuarios</a>
-                     <ul class="dropdown-menu dropdown-menu-left">
-                        <li><a href="index.php">Nuevo Usuario</a></li>
-                        <li class="divider"></li>
-                        <li><a href="listar.php">Listar Usuarios</a></li>
-                    </ul>
-                </li>
+                <li class="divider"></li>
+                <?php
+                if($_SESSION['LoginSistema']=="1"){
+                    include_once("class/menu.php");
+                    include_once("class/submenu.php");
+                    $menu=new menu;
+                    $submenu=new submenu;
+                    foreach($menu->mostrar($_SESSION['Nivel']) as $m){
+                    ?>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><?php echo $m['nombre']?></a>
+                         <ul class="dropdown-menu dropdown-menu-left">
+                            <?php foreach($submenu->mostrar($_SESSION['Nivel'],$m['codmenu']) as $sm){?>
+                            <li><a href="<?php echo $folder;?><?php echo $m['url']?><?php echo $sm['url']?>"><?php echo $sm['nombre']?></a></li>
+                    
+                    <?php
+                    }?>        
+                            <!--<li class="divider"></li>-->
+                        </ul>
+                    </li>
+                    <?php
+                    }
+                }?>
              </ul>
         </div><!-- navbar-collapse -->
     </div><!-- container -->
