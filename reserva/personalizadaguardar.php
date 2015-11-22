@@ -13,10 +13,10 @@ $valores=array(//"codservicio"=>"'$servicio'",
                 "telefonocliente"=>"'$telefonocliente'",
                 "tipo"=>"'Pedido'",
                 "cuentatigo"=>"''",
-                "codcolor"=>"''",
-                "coddiseno"=>"''",
-                "codflores"=>"''",
-                "codglobos"=>"''",
+                "codcolor"=>"'$codcolor'",
+                "coddiseno"=>"'$coddiseno'",
+                "codflores"=>"'$codflores'",
+                "codglobos"=>"'$codglobos'",
                 "total"=>"'$total'",
                 "opciondecoracion"=>"'$opciondecoracion'",
                 
@@ -47,7 +47,7 @@ include_once($folder."cabecerahtml.php");
                             <div class="alert alert-info">
                             <h4>Gracias por Confiar en Nosotros</h4>
                             <br>
-                            <h5>Su Reserva se Registro Correctamente</h5>
+                            <h5>Su Reserva Personalizada se Registro Correctamente</h5>
                             </div>
                         </div>
                     </div>
