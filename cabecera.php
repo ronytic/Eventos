@@ -27,26 +27,44 @@
             </ul>
 
             <div class="dropdown animated fadeInDown animation-delay-11">
+                <?php
+                if($_SESSION['LoginSistema']==""){
+                ?>
+                <!-- Inicio Login-->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administración</a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
-                    <form role="form" action="login/login.php">
+                    <form role="form" action="login/login.php" method="post">
                         <h4>Administración</h4>
 
                         <div class="form-group">
                             <div class="input-group login-input">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Usuario">
+                                <input type="text" class="form-control" placeholder="Usuario" name="usuario" required>
                             </div>
                             <br>
                             <div class="input-group login-input">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Contraseña">
+                                <input type="password" class="form-control" placeholder="Contraseña" name="pass" required>
                             </div>
                             <button type="submit" class="btn btn-ar btn-primary pull-right">Ingresar</button>
                             <div class="clearfix"></div>
                         </div>
                     </form>
                 </div>
+                <!--Fin Login-->
+                <?php }else{
+                    include_once("class/usuario.php");
+                    $datosu=new usuario;
+                    $dus=$datosu->mostrarDatos($_SESSION['CodUsuarioLog']);
+                    $dus=array_shift($dus);
+                ?>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $dus['nombre']?> <?php echo $dus['paterno']?> <?php echo $dus['materno']?></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
+                <a href="<?php echo $folder?>login/logout.php" class="btn btn-danger">Salir del Sistema</a>
+                </div>
+                <?php   
+                }                
+                ?>
             </div> <!-- dropdown -->
         </nav>
     </div> <!-- container -->
