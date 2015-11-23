@@ -21,7 +21,7 @@ include_once($folder."cabecerahtml.php");
                                 <td><input type="number" name="precio" class="form-control" min="0"></td>
                             </tr>
                             <td colspan="2">
-                            <input type="submit" value="Buscar" class="btn btn-info">
+                            <input type="submit" value="Guardar" class="btn btn-info">
                             </td>
                         </table>
                     </form>
