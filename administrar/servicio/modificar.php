@@ -14,7 +14,7 @@ include_once($folder."cabecerahtml.php");
             <h2 class="section-title">Modificar Servicio</h2>
             <div class="col-sm-offset-3 col-sm-6">
                 <fieldset>
-                    <legend>Datos del Diseño</legend>
+                    <legend>Datos del Servicio</legend>
                     <form action="actualizar.php" method="post" class="formulario" enctype="multipart/form-data">
                     <input type="hidden" name="codservicio" value="<?php echo $codservicio?>">
                         <table class="table table-bordered">
@@ -35,7 +35,7 @@ include_once($folder."cabecerahtml.php");
                             </tr>
                             <tr>
                                 <td>Descripción</td>
-                                <td><input type="text" name="descripcion" class="form-control" value="<?php echo $col['descripcion']?>"></td>
+                                <td><textarea name="descripcion" class="form-control" rows="5"><?php echo $col['descripcion']?></textarea></td>
                             </tr>
                             <tr>
                                 <td>Precio</td>

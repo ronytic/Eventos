@@ -22,7 +22,7 @@ include_once($folder."cabecerahtml.php");
                             </tr>
                             <tr>
                                 <td>Descripción</td>
-                                <td><input type="text" name="descripcion" class="form-control"></td>
+                                <td><textarea name="descripcion" class="form-control"></textarea></td>
                             </tr>
                             <tr>
                                 <td>Precio</td>
