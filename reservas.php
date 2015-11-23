@@ -32,7 +32,7 @@ function cargar(){
         
         <div class="row">
         <div class="col-md-8">
-        <h2 class="section-title">Reservas </h2>
+        <h2 class="section-title">Reservas <a href="pedido.php" class="btn btn-lg btn-warning pull-right">Pedido Personalizado</a></h2>
             <article class="post animated fadeInLeft animation-delay-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
