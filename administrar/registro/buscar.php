@@ -1,7 +1,6 @@
 <?php
 include_once("../../class/reserva.php");
 $reserva=new reserva;
-print_r($_POST);
 extract($_POST);
 $res=$reserva->mostrarTodoRegistro("fechaevento='$fechaevento' and nombrecliente LIKE '$nombrecliente%' and estado='$estado' and tipo LIKE '$tipo'",1,"");
 ?>
