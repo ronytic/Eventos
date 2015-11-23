@@ -8,7 +8,7 @@ include_once($folder."cabecerahtml.php");
 $(document).on("ready",function(){
     $(document).on("click",".eliminar",function(e){
         e.preventDefault();    
-        if(confirm("¿Esta seguro que desea Eliminar este Evento?")){
+        if(confirm("¿Esta seguro que desea Eliminar este Diseño de Globos?")){
             var cod=$(this).attr("rel");
             $.post("eliminar.php",{'codglobos':cod},function(data){
                 $(".formulario").submit();
