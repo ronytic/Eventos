@@ -4,7 +4,7 @@ extract($_POST);
 $codtestimonio=$_POST['codtestimonio'];
 
 include_once("../../class/testimonio.php");
-$testimonio=new testimonio;
+$test=new testimonio;
 $valores=array("nombre"=>"'$nombre'",
                 "facebook"=>"'$facebook'",
                 "titulo"=>"'$titulo'",
@@ -28,7 +28,7 @@ if($_FILES['img3']['name']!=""){
     $img1=$nombrearchivo;
     $valores['img3']="'$img3'";
 }
-$testimonio->actualizarRegistro($valores,"codtestimonio=".$codtestimonio);
+$test->actualizarRegistro($valores,"codtestimonio=".$codtestimonio);
 
 $folder="../../";
 include_once($folder."cabecerahtml.php");

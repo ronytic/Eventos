@@ -20,7 +20,7 @@ if($_FILES['img3']['name']!=""){
 
 
 include_once("../../class/testimonio.php");
-$testimonio=new testimonio;
+$test=new testimonio;
 $valores=array("nombre"=>"'$nombre'",
                 "facebook"=>"'$facebook'",
                 "titulo"=>"'$titulo'",
@@ -29,7 +29,7 @@ $valores=array("nombre"=>"'$nombre'",
                 "img2"=>"'$img2'",
                 "img3"=>"'$img3'",
             );
-$testimonio->insertarRegistro($valores);
+$test->insertarRegistro($valores);
 $folder="../../";
 include_once($folder."cabecerahtml.php");
 ?>
