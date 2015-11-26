@@ -2,7 +2,7 @@
 include_once("../../class/reserva.php");
 $reserva=new reserva;
 extract($_POST);
-$res=$reserva->mostrarTodoRegistro("fechaevento='$fechaevento' and nombrecliente LIKE '$nombrecliente%' and estado='$estado' and tipo LIKE '$tipo'",1,"");
+$res=$reserva->mostrarTodoRegistro("fechaevento='$fechaevento' and nombrecliente LIKE '$nombrecliente%' and estado LIKE '$estado' and tipo LIKE '$tipo'",1,"");
 ?>
 <table class="table table-bordered table-striped table-hover">
 <thead>
