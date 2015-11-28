@@ -6,9 +6,9 @@ include_once("fpdf_protection.php");
 		function Header(){
 			global $idioma;
 			$this->SetTitle(utf8_decode("Sistema de Administración de Clinica"),true);
-			$this->SetAuthor(utf8_decode("Sistema de Administración de Clinica Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
-			$this->SetSubject(utf8_decode("Sistema de Administración de Clinica por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
-			$this->SetCreator(utf8_decode("Sistema de Administración de Clinica por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
+			$this->SetAuthor(utf8_decode("Sistema de Administración  Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
+			$this->SetSubject(utf8_decode("Sistema de Administración  Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
+			$this->SetCreator(utf8_decode("Sistema de Administración  Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
 			$this->SetProtection(array('print'));
 			if($this->CurOrientation=="P"){$this->ancho=$this->w-34;}else{$this->ancho=$this->w-40;}	
 			/*
@@ -23,8 +23,8 @@ include_once("fpdf_protection.php");
 			global $title,$gestion,$titulo,$logo,$idioma;
 			$fecha=capitalizar(strftime("%A, %d ")).$idioma['De'].capitalizar(strftime(" %B ")).$idioma['De'].strftime(" %Y");
 			
-			$logo="comando.jpg";
-			$this->Image("../../imagenes/logo/".$logo,10,10,40,20);
+			$logo="logo.jpg";
+			$this->Image("../../imagenes/logos/".$logo,10,10,20,20);
 			$this->Fuente("",10);
 			$this->SetXY(34,12);
 			$this->Cell(70,4,utf8_decode($title),0,0,"L");
@@ -138,7 +138,7 @@ include_once("fpdf_protection.php");
 				//$this->Cell((round(($this->ancho-50)/2)+10),3,utf8_decode($idioma['TituloSistema'].""),0,0,"R");
 				//$this->ln();
 				//$this->Cell((round(($this->ancho-50)/2)+40),3,"",0,0,"R");
-				$this->Cell((round(($this->ancho-50)/2)+10),3,"Desarrollado por Ronald Nina",0,0,"R");
+				$this->Cell((round(($this->ancho-50)/2)+10),3,"",0,0,"R");
 			}else{
 				$this->Cell((round(($this->ancho-50)/2)+10),4,utf8_decode($idioma['TituloSistema']." - Desarrollado por Ronald Nina"),0,0,"R");	
 			}
