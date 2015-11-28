@@ -88,6 +88,8 @@ $(document).on("ready",function(){
                         <td><input type="text" name="telefonocliente" class="form-control" value="<?php echo $res['telefonocliente']?>" ></td>
                     </tr>
                 </table>
+                <h4 class="section-title">Conclusión Final del Trabajo</h4>
+                <textarea class="form-control" name="conclusion"><?php echo $res['conclusion']?></textarea>
             </div>
             <div class="col-sm-6">
                 <table class="table table-bordered">

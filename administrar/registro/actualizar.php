@@ -20,6 +20,7 @@ $valores=array("codservicio"=>"'$codservicio'",
                 "codglobos"=>"'$codglobos'",
                 "total"=>"'$total'",
                 "opciondecoracion"=>"'$opciondecoracion'",
+                "conclusion"=>"'$conclusion'",
                 
                 "acuenta"=>"'$acuenta'",
                 "saldo"=>"'$saldo'",
