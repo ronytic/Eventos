@@ -35,9 +35,9 @@ $(document).on("ready",function(){
                                     <th><input type="text" name="nombrecliente" class="form-control"></th>
                                     <th>Estado</th>
                                     <th><select name="estado" class="form-control">
-                                        <option value="Pendiente" selected>Pendiente</option>
+                                        <option value="Pendiente" >Pendiente</option>
                                         <option value="Confirmado">Confirmado</option>
-                                        <option value="%">Todos</option>
+                                        <option value="%" selected>Todos</option>
                                     </select></th>
                                     <th>Tipo Evento</th>
                                     <th><select name="tipo" class="form-control">
