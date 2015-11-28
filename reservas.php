@@ -12,7 +12,15 @@ $ser=$servicio->mostrarTodoRegistro("",1,"titulo");
 $(document).on("ready",function(){
     $(document).on("change","[name=servicio]",cargar);
     cargar();
+    $(document).on("change","[name=fechaevento]",evento);
+    evento();
 });
+function evento(){
+    var  fechaevento=$("[name=fechaevento]").val();
+    $.post("cantidad.php",{"FechaEvento":fechaevento},function(data){
+        $(".mensajeevento").html(data);
+    });
+}
 function cargar(){
         var imagen=$("[name=servicio]>option:selected").attr("rel-imagen");
         var precio=$("[name=servicio]>option:selected").attr("rel-precio");
@@ -73,8 +81,10 @@ function cargar(){
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Fecha del Evento</td>
-                                        <td><input type="date" value="<?php echo date("Y-m-d");?>" name="fechaevento" class="form-control" required></td>
+                                        <td>Fecha del Evento<br>
+                                        
+                                        </td>
+                                        <td><input type="date" value="<?php echo date("Y-m-d");?>" name="fechaevento" class="form-control" required><div class="mensajeevento"></div></td>
                                     </tr>
                                     <tr>
                                         <td>Hora del Evento</td>
@@ -112,7 +122,7 @@ function cargar(){
                                         <td><a href="http://www.tigo.com.bo/tigo-money/negocios/pagos-web" class="btn btn-lg btn-info" target="_blank"><img src="imagenes/logos/tigo.png"></a></td>
                                     </tr>
                                 </table>
-                                <input type="submit" value="Reservar" class="btn btn-lg btn-success">
+                                <input type="submit" value="Reservar" class="btn btn-lg btn-success" id="botonenviar">
                                 </form>
                             </div>
                         </div>

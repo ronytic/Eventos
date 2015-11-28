@@ -25,6 +25,8 @@ $glo=$globos->mostrarTodoRegistro("",1,"descripcion");
 $(document).on("ready",function(){
     $(document).on("change",".pedido",cargar);
     cargar();
+    $(document).on("change","[name=fechaevento]",evento);
+    evento();
 });
 function cargar(){
 
@@ -37,6 +39,12 @@ function cargar(){
         
        //DETALLAR OTRAS OPCIONES PARA SU DECORACION
     }
+function evento(){
+    var  fechaevento=$("[name=fechaevento]").val();
+    $.post("cantidad.php",{"FechaEvento":fechaevento},function(data){
+        $(".mensajeevento").html(data);
+    });
+}
 </script>
 <?php include_once("cabecera.php");?>
 <section class="">
@@ -112,7 +120,7 @@ function cargar(){
                                 <table class="table table-hover table-bordered">
                                     <tr>
                                         <td>Fecha del Evento</td>
-                                        <td><input type="date" value="<?php echo date("Y-m-d");?>" name="fechaevento" class="form-control" required></td>
+                                        <td><input type="date" value="<?php echo date("Y-m-d");?>" name="fechaevento" class="form-control" required><div class="mensajeevento"></div></td>
                                     </tr>
                                     <tr>
                                         <td>Hora del Evento</td>
@@ -150,7 +158,7 @@ function cargar(){
                                         <td><a href="http://www.tigo.com.bo/tigo-money/negocios/pagos-web" class="btn btn-lg btn-info" target="_blank"><img src="imagenes/logos/tigo.png"></a></td>
                                     </tr>
                                 </table>
-                                <input type="submit" value="Reservar" class="btn btn-lg btn-success">
+                                <input type="submit" value="Reservar" class="btn btn-lg btn-success" id="botonenviar">
                                 </form>
                             </div>
                         </div>
