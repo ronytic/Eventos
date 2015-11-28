@@ -29,7 +29,9 @@ switch($r['estado']){
     <td><?php echo $r['saldo']?></td>
     <td><span class="label label-<?php echo $estado?>"><?php echo $r['estado']?></span></td>
     <td><?php echo $r['tipo']?></td>
-    <td><a href="personal.php?c=<?php echo $r['codreserva']?>" class="btn btn-info btn-xs">Asignar</a></td>
+   
+    <td><a href="personal.php?c=<?php echo $r['codreserva']?>" class="btn btn-info btn-xs" title="Asignar Personal">Asignar</a></td>
+     <td><a href="reporte.php?c=<?php echo $r['codreserva']?>" class="btn btn-warning btn-xs" title="Ver Reporte para Impresión"><i class="fa fa-file"></i></a></td>
     <td><a href="modificar.php?c=<?php echo $r['codreserva']?>" class="btn btn-success btn-xs" title="Modificar" rel="<?php echo $r['codreserva']?>">M</a></td>
     <td><a href="eliminar.php" class="btn btn-danger btn-xs eliminar" title="Eliminar" rel="<?php echo $r['codreserva']?>">E</a></td>
 </tr>
