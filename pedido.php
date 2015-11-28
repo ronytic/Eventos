@@ -138,6 +138,10 @@ function cargar(){
                                         <td>Teléfono del Cliente</td>
                                         <td><input type="text" value="" name="telefonocliente" class="form-control" required ></td>
                                     </tr>
+                                    <tr class="info">
+                                        <td>Correo del Cliente</td>
+                                        <td><input type="text" value="" name="correo" class="form-control" required ></td>
+                                    </tr>
                                 </table>
                                 <h3>Pagos</h3>
                                 <table class="table table-bordered">
