@@ -1,5 +1,5 @@
 <?php
-$cantidadmaxima=20;
+$cantidadmaxima=0;
 $FechaEvento=$_POST['FechaEvento'];
 include_once("class/reserva.php");
 $reserva=new reserva;
