@@ -115,5 +115,11 @@ foreach($per as $p){
     $pdf->CuadroCuerpoPersonalizado(40,$usu['cargo'],0,"","1","");
     $pdf->ln();
 }
+
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(30,"Observaciones",0,"","","B");
+$pdf->ln();
+$pdf->CuadroCuerpoMulti(182,"",0,"","B","");
+
 $pdf->Output();
 ?>
