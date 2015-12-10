@@ -155,7 +155,8 @@ function evento(){
                                 <table class="table table-bordered">
                                     <tr class="info">
                                         <td>A traves de Tigo</td>
-                                        <td><a href="http://www.tigo.com.bo/tigo-money/negocios/pagos-web" class="btn btn-lg btn-info" target="_blank"><img src="imagenes/logos/tigo.png"></a></td>
+                                        <td><a href="http://www.tigo.com.bo/tigo-money/negocios/pagos-web" class="btn btn-lg btn-info" target="_blank"><img src="imagenes/logos/tigo.png"></a>
+                                        </td>
                                     </tr>
                                 </table>
                                 <input type="submit" value="Reservar" class="btn btn-lg btn-success" id="botonenviar">
